@@ -1,8 +1,33 @@
-*,*::before, *::after {
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+/* Write these styles first
+  .border_box {
   box-sizing: border-box;
-  font-family: Georgia, 'Times New Roman', Times, serif ;
 }
 
+.main-nav-list {
+  list-style: none;
+  padding: 0;
+}
+.main-nav-list-item {
+  padding: .7rem 0;
+  text-align:center;
+  background-color: lime;
+  border: 1px solid #000;
+}
+
+.box {
+  background-color: pink;
+  border:1px solid blue;
+  margin: 10px 0;
+  padding:10px;
+} */
 :root {
   --hue-neutral: 200;
   --hue-wrong: 0;
@@ -10,35 +35,40 @@
 }
 
 body {
+  padding: 0 30%;
+  text-align: center;
+  max-width: 800px;
   --hue: var(--hue-neutral);
-  padding: 0;
-  margin: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
   background-color: hsl(var(--hue), 100%, 20%);
 }
-
+/* displays the color when the answer is correct */
 body.correct {
   --hue: var(--hue-correct);
   
 
 }
-
+/* displays the color when the answer is incorrect */
 body.wrong {
   --hue: var(--hue-wrong);
 
 }
 
+/* check to see if position:absolute; will affect in mobile ready  */
 .container {
+  position: absolute;
   width: 800px;
   max-width: 80%;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
   box-shadow: 0 0 10px 2px;
+  text-align: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+
 }
 
 .btn-grid {
@@ -88,3 +118,4 @@ body.wrong {
 .hide {
   display: none;
 }
+
